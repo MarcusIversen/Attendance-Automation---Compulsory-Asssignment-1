@@ -21,6 +21,9 @@ public class MainMenuController{
     private Button btnSwitch;
 
     @FXML
+    private Button btnHelp;
+
+    @FXML
     private PasswordField passwordField;
 
     public void goToStudentInfo() throws Exception {
@@ -36,5 +39,13 @@ public class MainMenuController{
             alert.setContentText("The CPR nr. must be 10 characters");
             alert.showAndWait();
         }
+    }
+
+    public void help() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Please contact the administration");
+        alert.setHeaderText("Please contract the administration");
+        alert.setContentText("Contact the administration for help");
+        alert.showAndWait();
     }
 }

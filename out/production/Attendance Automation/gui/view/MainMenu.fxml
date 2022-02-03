@@ -13,7 +13,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="269.0" promptText="Enter Cpr Nr." style="-fx-background-color: white;" />
+            <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="269.0" promptText="Enter Cpr Nr." style="-fx-background-color: black;" />
             <Label layoutX="188.0" layoutY="14.0" text="Registration">
                <font>
                   <Font size="42.0" />
@@ -25,6 +25,7 @@
                </image>
             </ImageView>
             <Button fx:id="btnSwitch" layoutX="274.0" layoutY="328.0" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter" />
+            <Button fx:id="btnHelp" layoutX="522.0" layoutY="328.0" mnemonicParsing="false" onAction="#help" text="Help" />
          </children>
       </AnchorPane>
    </center>
