@@ -27,7 +27,7 @@
             <Label layoutX="225.0" layoutY="174.0" text="Username" />
             <ImageView fitHeight="65.0" fitWidth="220.0" layoutX="183.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/Akademi.png" />
+                  <Image url="@img/Akademi.jpg" />
                </image>
             </ImageView>
          </children>
