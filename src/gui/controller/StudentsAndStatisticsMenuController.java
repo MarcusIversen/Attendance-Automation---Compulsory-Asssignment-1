@@ -1,7 +1,6 @@
 package gui.controller;
 
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,9 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class MainMenuController{
+public class StudentsAndStatisticsMenuController {
 
     private String usernameField1 = "Bo";
 
@@ -44,7 +41,7 @@ public class MainMenuController{
             switcher.setScene(scene);
         } else if(passwordField.getText().equals(passwordFieldTeacher) && textField.getText().equals(usernameFieldTeacher)){
             Stage switcher = (Stage) btnSwitch.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StatisticsMenu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentsAndStatisticsMenu.fxml"));
             Scene scene = new Scene(root);
             switcher.setScene(scene);
         }else {
