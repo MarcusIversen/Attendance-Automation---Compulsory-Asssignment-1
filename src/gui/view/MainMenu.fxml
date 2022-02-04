@@ -21,7 +21,7 @@
             <Button fx:id="btnSwitch" layoutX="274.0" layoutY="328.0" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter" />
             <Button fx:id="btnHelp" layoutX="522.0" layoutY="328.0" mnemonicParsing="false" onAction="#help" text="Help" />
             <Label layoutX="225.0" layoutY="243.0" text="Password" />
-            <TextField layoutX="225.0" layoutY="200.0" promptText="Enter Username" />
+            <TextField fx:id="textField" layoutX="225.0" layoutY="200.0" promptText="Enter Username" />
             <Label layoutX="225.0" layoutY="174.0" text="Username" />
          </children>
       </AnchorPane>

@@ -9,11 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainMenuController{
+
+    private String usernameField1 = "Bo";
 
     private String passwordField1 = "1";
 
@@ -26,8 +29,11 @@ public class MainMenuController{
     @FXML
     private PasswordField passwordField;
 
+    @FXML
+    private TextField textField;
+
     public void goToStudentInfo() throws Exception {
-        if (passwordField.getText().equals(passwordField1)) {
+        if (passwordField.getText().equals(passwordField1) && textField.getText().equals(usernameField1)) {
             Stage switcher = (Stage) btnSwitch.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
             Scene scene = new Scene(root);
