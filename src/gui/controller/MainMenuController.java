@@ -20,6 +20,10 @@ public class MainMenuController{
 
     private String passwordField1 = "1";
 
+    private String usernameFieldTeacher = "Ole";
+
+    private String passwordFieldTeacher = "1";
+
     @FXML
     private Button btnSwitch;
 
@@ -38,7 +42,12 @@ public class MainMenuController{
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
             Scene scene = new Scene(root);
             switcher.setScene(scene);
-        } else {
+        } else if(passwordField.getText().equals(passwordFieldTeacher) && textField.getText().equals(usernameFieldTeacher)){
+            Stage switcher = (Stage) btnSwitch.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StatisticsMenu.fxml"));
+            Scene scene = new Scene(root);
+            switcher.setScene(scene);
+        }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Wrong CPR Nr.");
             alert.setHeaderText("Please contract the administration");
