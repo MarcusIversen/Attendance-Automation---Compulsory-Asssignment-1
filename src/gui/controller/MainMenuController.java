@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class MainMenuController{
 
-    private String passwordField1 = "1234567890";
+    private String passwordField1 = "123";
 
     @FXML
     private Button btnSwitch;

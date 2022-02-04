@@ -21,7 +21,7 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/sundhedskort2-removebg-preview.png" />
+                  <Image url="@img/sundhedskort2-removebg-preview.png" />
                </image>
             </ImageView>
             <Button fx:id="btnSwitch" layoutX="274.0" layoutY="328.0" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter" />
