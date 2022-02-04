@@ -49,9 +49,9 @@ public class MainMenuController{
             switcher.setScene(scene);
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Wrong CPR Nr.");
+            alert.setTitle("Wrong Username or Password");
             alert.setHeaderText("Please contract the administration");
-            alert.setContentText("The CPR nr. must be 10 characters");
+            alert.setContentText("You can also try again");
             alert.showAndWait();
         }
     }
