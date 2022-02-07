@@ -43,8 +43,14 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnHelp" mnemonicParsing="false" onAction="#help" text="Help" />
-            <Button fx:id="btnSwitch" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter" />
+            <Button fx:id="btnSwitch" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter">
+               <HBox.margin>
+                  <Insets left="200.0" right="112.0" />
+               </HBox.margin></Button>
+            <Button fx:id="btnHelp" mnemonicParsing="false" onAction="#help" text="Help">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Button>
          </children>
       </HBox>
    </bottom>

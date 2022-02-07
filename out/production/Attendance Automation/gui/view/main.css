@@ -66,6 +66,3 @@ Redefine of the background color, to a dark blue color.
 #tcPresent{
     -fx-alignment: center;
 }
-#borderPane{
-    -fx-background-color: red;
-}
