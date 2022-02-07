@@ -8,12 +8,12 @@ public class Student {
 
     private SimpleStringProperty name;
     private SimpleStringProperty present;
-    private SimpleDoubleProperty total;
+    private SimpleStringProperty total;
 
-    public Student(String name, String present, Double total) {
+    public Student(String name, String present, String total) {
         this.name = new SimpleStringProperty(name);
         this.present = new SimpleStringProperty(present);
-        this.total = new SimpleDoubleProperty(total);
+        this.total = new SimpleStringProperty(total);
     }
 
     public String getName() {
@@ -32,11 +32,11 @@ public class Student {
         this.present = new SimpleStringProperty(present);
     }
 
-    public Double getTotal() {
+    public String getTotal() {
         return total.get();
     }
 
-    public void setTotal(Double total) {
-        this.total = new SimpleDoubleProperty(total);
+    public void setTotal(String total) {
+        this.total = new SimpleStringProperty(total);
     }
 }

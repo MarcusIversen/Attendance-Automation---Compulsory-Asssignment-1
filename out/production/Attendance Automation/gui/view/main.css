@@ -60,3 +60,9 @@ Redefine of the background color, to a dark blue color.
     /* -fx-alignment: center-right; */
     -fx-alignment: center;
 }
+#tcTotal{
+    -fx-alignment: center;
+}
+#tcPresent{
+    -fx-alignment: center;
+}

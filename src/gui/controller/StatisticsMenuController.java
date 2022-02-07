@@ -54,10 +54,10 @@ public class StatisticsMenuController implements Initializable {
 
     // add your data here from any source
     private ObservableList<Student> students = FXCollections.observableArrayList(
-            new Student("Henrik Henriksen", "Yes", 60.54),
-            new Student("John Johnson", "Yes", 45.21),
-            new Student("Andy Lam", "No", 14.42),
-            new Student("Mathias Ferniss", "Yes", 20.55)
+            new Student("Henrik Henriksen", "Yes", "60.54 %"),
+            new Student("John Johnson", "Yes", "45.21 %"),
+            new Student("Andy Lam", "No", "14.42 %"),
+            new Student("Mathias Ferniss", "Yes", "20.55 %")
     );
 
 
