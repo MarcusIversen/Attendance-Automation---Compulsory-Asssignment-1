@@ -20,11 +20,11 @@ public class StudentInfoMenuController implements Initializable {
     @FXML
     private Button checkInBtn;
     @FXML
-    private TableView <Absence>tvDailyAbsence;
+    private TableView<Absence> tvDailyAbsence;
     @FXML
-    private TableColumn tcDay;
+    private TableColumn<Absence, String> tcDay;
     @FXML
-    private TableColumn tcAbsence;
+    private TableColumn<Absence, String> tcAbsence;
     @FXML
     private BorderPane borderPane;
 
@@ -33,8 +33,22 @@ public class StudentInfoMenuController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         borderPane.setCenter(buildPieChart());
 
+        tcDay.setCellValueFactory(new PropertyValueFactory<>("day"));
+        tcAbsence.setCellValueFactory(new PropertyValueFactory<>("absence"));
 
+        //add your data to the table here.
+        tvDailyAbsence.setItems(absence);
     }
+
+    // add your data here from any source
+    private ObservableList<Absence> absence = FXCollections.observableArrayList(
+            new Absence("Monday", "10 %"),
+            new Absence("Tuesday", "15 %"),
+            new Absence("Wednesday", "15 %"),
+            new Absence("Thursday", "15 %"),
+            new Absence("Friday", "15 %")
+            );
+
     private PieChart buildPieChart() {
         //Create Data
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
