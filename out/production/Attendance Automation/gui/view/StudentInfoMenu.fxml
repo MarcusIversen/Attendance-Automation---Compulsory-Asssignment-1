@@ -48,7 +48,7 @@
                         <Image url="@img/EASV-med-ramme.jpg" />
                      </image>
                   </ImageView>
-                  <Label fx:id="textInfo" layoutX="350.0" layoutY="26.0" text="Student info" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="250.5" AnchorPane.topAnchor="26.0">
+                  <Label fx:id="textInfo" layoutX="350.0" text="Student info" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="250.5" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="36.0" />
                      </font>
