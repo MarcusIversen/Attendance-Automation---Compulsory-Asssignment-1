@@ -1,63 +1,64 @@
 package gui.controller;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class StatisticsMenuController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    private String usernameField1 = "Bo";
-
-    private String passwordField1 = "1";
-
-    private String usernameFieldTeacher = "Ole";
-
-    private String passwordFieldTeacher = "1";
+public class StatisticsMenuController implements Initializable {
 
     @FXML
-    private Button btnSwitch;
+    public BorderPane borderPane;
 
-    @FXML
-    private Button btnHelp;
-
-    @FXML
-    private PasswordField passwordField;
-
-    @FXML
-    private TextField textField;
-
-    public void goToStudentInfo() throws Exception {
-        if (passwordField.getText().equals(passwordField1) && textField.getText().equals(usernameField1)) {
-            Stage switcher = (Stage) btnSwitch.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
-            Scene scene = new Scene(root);
-            switcher.setScene(scene);
-        } else if(passwordField.getText().equals(passwordFieldTeacher) && textField.getText().equals(usernameFieldTeacher)){
-            Stage switcher = (Stage) btnSwitch.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StatisticsMenu.fxml"));
-            Scene scene = new Scene(root);
-            switcher.setScene(scene);
-        }else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Wrong Username or Password");
-            alert.setHeaderText("Please contract the administration");
-            alert.setContentText("You can also try again");
-            alert.showAndWait();
-        }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        borderPane.setCenter(buildBarChart());
     }
 
-    public void help() {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Please contact the administration");
-        alert.setHeaderText("Please contract the administration");
-        alert.setContentText("Contact the administration for help");
-        alert.showAndWait();
+
+
+    public void handleShowBarChart(ActionEvent actionEvent) {
+        borderPane.setCenter(buildBarChart());
     }
+
+    private BarChart buildBarChart() {
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Product");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Quantity Sold");
+
+        BarChart barChart = new BarChart(xAxis, yAxis);
+
+        XYChart.Series data = new XYChart.Series();
+        data.setName("Products Sold");
+
+        //provide data
+        data.getData().add(new XYChart.Data("Product A", 3000));
+        data.getData().add(new XYChart.Data("Product B", 1500));
+        data.getData().add(new XYChart.Data("Product C", 700));
+
+        barChart.getData().add(data);
+        barChart.setLegendVisible(false);
+
+        return barChart;
+    }
+
+
 }
