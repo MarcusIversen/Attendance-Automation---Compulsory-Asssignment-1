@@ -49,6 +49,10 @@ public class StatisticsMenuController implements Initializable {
         data.getData().add(new XYChart.Data("The Dictator", 40));
         data.getData().add(new XYChart.Data("Andy Lam", 30));
         data.getData().add(new XYChart.Data("Mathias Ferniss", 25));
+        data.getData().add(new XYChart.Data("Mathias F", 25));
+        data.getData().add(new XYChart.Data("Mathias Fernet", 25));
+        data.getData().add(new XYChart.Data("Mathias Far", 25));
+        data.getData().add(new XYChart.Data("Mathias Fyr", 25));
 
         barChart.getData().add(data);
         barChart.setLegendVisible(false);

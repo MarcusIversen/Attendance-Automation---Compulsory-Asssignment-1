@@ -28,7 +28,7 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <TableView layoutX="62.0" layoutY="47.0" prefHeight="479.0" prefWidth="405.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                              <TableView layoutX="62.0" layoutY="47.0" prefHeight="393.0" prefWidth="405.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn prefWidth="147.20003658533096" text="Name" />
                                   <TableColumn prefWidth="68.79998779296875" text="Present" />
@@ -37,6 +37,7 @@
                                 </columns>
                               </TableView>
                               <Button layoutX="13.0" layoutY="489.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="93.0" text="Student info/student statistics" />
+                              <Button layoutX="19.0" layoutY="400.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Student info" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
