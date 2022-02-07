@@ -46,8 +46,8 @@ public class StatisticsMenuController implements Initializable {
 
         //provide data
         data.getData().add(new XYChart.Data("Kim Jong Un", 80 ));
-        data.getData().add(new XYChart.Data("The dictator", 40));
-        data.getData().add(new XYChart.Data("Andy Lam Nguyen", 30));
+        data.getData().add(new XYChart.Data("The Dictator", 40));
+        data.getData().add(new XYChart.Data("Andy Lam", 30));
         data.getData().add(new XYChart.Data("Mathias Ferniss", 25));
 
         barChart.getData().add(data);
