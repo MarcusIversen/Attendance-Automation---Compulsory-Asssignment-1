@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StudentInfoMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StudentInfoMenuController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="751.0">
                <children>
-                  <Button fx:id="checkInBtn" layoutX="551.0" layoutY="189.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="173.0" text="Check-In" AnchorPane.rightAnchor="74.60000000000005">
+                  <Button fx:id="checkInBtn" layoutX="551.0" layoutY="189.0" mnemonicParsing="false" onAction="#checkInButton" prefHeight="38.0" prefWidth="173.0" text="Check-In" AnchorPane.rightAnchor="74.60000000000005">
                      <font>
                         <Font size="13.0" />
                      </font>
