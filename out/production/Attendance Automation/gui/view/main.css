@@ -57,5 +57,6 @@ Redefine of the background color, to a dark blue color.
     -fx-alignment: center;
 }
 #tcAbsence{
+    /* -fx-alignment: center-right; */
     -fx-alignment: center;
 }
