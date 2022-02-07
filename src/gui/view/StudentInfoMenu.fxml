@@ -28,11 +28,6 @@
                         <Image url="@img/KimJongUn.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="304.0" layoutY="8.0" text="Student info" AnchorPane.bottomAnchor="236.00000000000003" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="299.20000000000005" AnchorPane.topAnchor="8.0">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
                   <Label layoutX="204.0" layoutY="84.0" prefHeight="72.0" prefWidth="198.0" text="Jong Un, Kim" AnchorPane.leftAnchor="204.0">
                      <font>
                         <Font size="34.0" />
@@ -53,6 +48,11 @@
                         <Image url="@img/EASV-med-ramme.jpg" />
                      </image>
                   </ImageView>
+                  <Label fx:id="textInfo" layoutX="350.0" layoutY="26.0" text="Student info" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="250.5" AnchorPane.topAnchor="26.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="301.0" prefWidth="388.0">
                <children>
