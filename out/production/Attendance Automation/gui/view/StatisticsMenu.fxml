@@ -27,7 +27,7 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <TableView layoutX="62.0" layoutY="47.0" prefHeight="523.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                              <TableView layoutX="62.0" layoutY="47.0" prefHeight="488.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn prefWidth="147.20003658533096" text="Name" />
                                   <TableColumn prefWidth="68.79998779296875" text="Present" />
@@ -39,7 +39,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <BorderPane fx:id="borderPane" layoutX="39.0" layoutY="162.0" prefHeight="523.2" prefWidth="394.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <BorderPane fx:id="borderPane" layoutX="39.0" layoutY="162.0" prefHeight="523.2" prefWidth="394.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                     </items>

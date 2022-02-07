@@ -32,27 +32,23 @@ public class StatisticsMenuController implements Initializable {
     }
 
 
-
-    public void handleShowBarChart(ActionEvent actionEvent) {
-        borderPane.setCenter(buildBarChart());
-    }
-
     private BarChart buildBarChart() {
         CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Product");
+        xAxis.setLabel("Student");
 
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Quantity Sold");
+        yAxis.setLabel("Absence in %");
 
         BarChart barChart = new BarChart(xAxis, yAxis);
 
         XYChart.Series data = new XYChart.Series();
-        data.setName("Products Sold");
+        data.setName("Total Absence");
 
         //provide data
-        data.getData().add(new XYChart.Data("Product A", 3000));
-        data.getData().add(new XYChart.Data("Product B", 1500));
-        data.getData().add(new XYChart.Data("Product C", 700));
+        data.getData().add(new XYChart.Data("Kim Jong Un", 80 ));
+        data.getData().add(new XYChart.Data("The dictator", 40));
+        data.getData().add(new XYChart.Data("Andy Lam Nguyen", 30));
+        data.getData().add(new XYChart.Data("Mathias Ferniss", 25));
 
         barChart.getData().add(data);
         barChart.setLegendVisible(false);
