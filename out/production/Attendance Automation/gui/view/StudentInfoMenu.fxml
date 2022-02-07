@@ -48,7 +48,7 @@
                         <Image url="@img/EASV-med-ramme.jpg" />
                      </image>
                   </ImageView>
-                  <Label fx:id="textInfo" layoutX="350.0" text="Student info" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="250.5" AnchorPane.topAnchor="0.0">
+                  <Label fx:id="textInfo" layoutX="350.0" text="Student info" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="250.5" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -63,7 +63,7 @@
                               <TableView fx:id="tvDailyAbsence" layoutX="98.0" prefHeight="296.0" prefWidth="229.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn fx:id="tcDay" prefWidth="161.5999999642372" text="Day" />
-                                  <TableColumn fx:id="tcAbsence" prefWidth="108.80000305175781" text="Absence" />
+                                  <TableColumn fx:id="tcAbsence" minWidth="-Infinity" prefWidth="108.80000305175781" text="Absence" />
                                 </columns>
                               </TableView>
                            </children></AnchorPane>
