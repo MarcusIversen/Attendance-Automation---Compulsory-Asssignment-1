@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StudentInfoMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StudentInfoMenuController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -28,7 +28,7 @@
                         <Image url="@img/KimJongUn.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="304.0" layoutY="8.0" text="Student info" AnchorPane.bottomAnchor="236.00000000000003" AnchorPane.topAnchor="8.0">
+                  <Label layoutX="304.0" layoutY="8.0" text="Student info" AnchorPane.bottomAnchor="236.00000000000003" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="299.20000000000005" AnchorPane.topAnchor="8.0">
                      <font>
                         <Font size="36.0" />
                      </font>

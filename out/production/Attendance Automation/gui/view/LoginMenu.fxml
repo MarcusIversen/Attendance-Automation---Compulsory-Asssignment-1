@@ -10,11 +10,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StatisticsMenuController">
+<BorderPane fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.StatisticsMenuController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
+            <TextField fx:id="textField" accessibleRole="TEXT_AREA" layoutX="225.0" layoutY="200.0" promptText="Enter Username" style="-fx-background-color: black;" />
             <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="269.0" promptText="Enter Password" style="-fx-background-color: black;" />
+            <Label layoutX="225.0" layoutY="243.0" text="Password" />
             <Label layoutX="184.0" layoutY="14.0" text="Registration">
                <font>
                   <Font size="42.0" />
@@ -22,8 +24,6 @@
             </Label>
             <Button fx:id="btnSwitch" layoutX="274.0" layoutY="328.0" mnemonicParsing="false" onAction="#goToStudentInfo" text="Enter" />
             <Button fx:id="btnHelp" layoutX="522.0" layoutY="328.0" mnemonicParsing="false" onAction="#help" text="Help" />
-            <Label layoutX="225.0" layoutY="243.0" text="Password" />
-            <TextField fx:id="textField" accessibleRole="TEXT_AREA" layoutX="225.0" layoutY="200.0" promptText="Enter Username" />
             <Label layoutX="225.0" layoutY="174.0" text="Username" />
             <ImageView fitHeight="74.0" fitWidth="153.0" layoutX="222.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                <image>
