@@ -3,6 +3,7 @@ package gui.controller;
 import be.Absence;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
@@ -28,6 +29,7 @@ public class StudentInfoMenuController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
+    private boolean hasCheckedIn = true;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -38,6 +40,8 @@ public class StudentInfoMenuController implements Initializable {
 
         //add your data to the table here.
         tvDailyAbsence.setItems(absence);
+
+
     }
 
     // add your data here from any source
@@ -47,7 +51,7 @@ public class StudentInfoMenuController implements Initializable {
             new Absence("Wednesday", "15 %"),
             new Absence("Thursday", "15 %"),
             new Absence("Friday", "15 %")
-            );
+    );
 
     private PieChart buildPieChart() {
         //Create Data
@@ -68,5 +72,15 @@ public class StudentInfoMenuController implements Initializable {
         pieChart.setStartAngle(180);
 
         return pieChart;
+    }
+
+    public void checkInButton() {
+        if (hasCheckedIn == true) {
+           checkInBtn.setText("You are now checked in!");
+           hasCheckedIn = false;
+        } else {
+            checkInBtn.setText("You are now checked out!");
+            hasCheckedIn = true;
+        }
     }
 }
