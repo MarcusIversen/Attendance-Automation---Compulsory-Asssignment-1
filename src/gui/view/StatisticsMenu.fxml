@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginMenuController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginMenuController">
    <children>
-      <Label layoutX="90.0" layoutY="71.0" text="LoginMenu" />
+      <SplitPane dividerPositions="0.11898395721925133" layoutX="171.0" layoutY="63.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="178.0" layoutY="1.0" text="Students and statistics">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="799.0">
+               <children>
+                  <SplitPane dividerPositions="0.501755265797392" layoutX="406.0" layoutY="162.0" prefHeight="524.8" prefWidth="799.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView layoutX="62.0" layoutY="47.0" prefHeight="523.0" prefWidth="405.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="153.5999999642372" text="Name" />
+                                  <TableColumn prefWidth="142.40005493164062" text="Total Absence" />
+                                    <TableColumn prefWidth="109.60003662109375" text="Most absent" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <BorderPane layoutX="39.0" layoutY="162.0" prefHeight="523.2" prefWidth="394.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>
