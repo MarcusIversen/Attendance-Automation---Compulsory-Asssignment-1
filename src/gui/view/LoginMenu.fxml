@@ -13,22 +13,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="340.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="88.0" layoutY="14.0" text="Registration">
+      <Label layoutX="88.0" layoutY="14.0" text="Registration" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
-      <ImageView fitHeight="96.0" fitWidth="173.0" layoutX="83.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="96.0" fitWidth="173.0" layoutX="83.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="73.0">
          <image>
             <Image url="@img/EASV-med-ramme.jpg" />
          </image>
       </ImageView>
-      <PasswordField layoutX="103.0" layoutY="255.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter password here" />
-      <TextField layoutX="103.0" layoutY="205.0" promptText="Enter username here" />
+      <PasswordField layoutX="103.0" layoutY="255.0" prefHeight="26.0" prefWidth="150.0" promptText="Enter password here" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="86.6" />
+      <TextField layoutX="103.0" layoutY="205.0" promptText="Enter username here" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="87.4" />
       <Label layoutX="40.0" layoutY="209.0" text="Username:" />
       <Label layoutX="41.0" layoutY="259.0" text="Password:" />
-      <Button layoutX="173.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Login" />
-      <Label layoutX="22.0" layoutY="377.0" text="Forgot login" />
-      <CheckBox layoutX="215.0" layoutY="377.0" mnemonicParsing="false" text="Remember login?" />
+      <Button layoutX="173.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" text="Login" AnchorPane.rightAnchor="83.8" />
+      <Label layoutX="22.0" layoutY="377.0" text="Forgot login" AnchorPane.bottomAnchor="14.399999999999999" AnchorPane.leftAnchor="22.0" />
+      <CheckBox layoutX="210.0" layoutY="377.0" mnemonicParsing="false" text="Remember login?" AnchorPane.bottomAnchor="14.399999999999999" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
