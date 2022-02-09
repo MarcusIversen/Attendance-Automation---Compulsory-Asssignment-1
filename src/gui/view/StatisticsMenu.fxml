@@ -39,7 +39,7 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <Button layoutX="6.0" layoutY="490.80000000000007" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Student info" AnchorPane.bottomAnchor="6.0" />
+                              <Button fx:id="btnStudentInfo" onAction="#handleStudentInfo" layoutX="6.0" layoutY="490.80000000000007" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Student info" AnchorPane.bottomAnchor="6.0" />
                               <Button fx:id="btnClose" layoutX="243.0" layoutY="490.80000000000007" mnemonicParsing="false" onAction="#handleClose" prefHeight="26.0" prefWidth="110.0" text="Close" AnchorPane.bottomAnchor="6.0" />
                               <Button fx:id="btnLogOut" layoutX="126.0" layoutY="490.80000000000007" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="26.0" prefWidth="109.0" text="Log-out" AnchorPane.bottomAnchor="6.0" />
                            </children>
