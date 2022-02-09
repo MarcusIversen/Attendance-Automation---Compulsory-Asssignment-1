@@ -127,7 +127,7 @@ public class StatisticsMenuController implements Initializable {
     public void handleStudentInfo(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
         Stage stage = new Stage();
-        stage.setTitle("My New Stage Title");
+        stage.setTitle("Student Info");
         stage.setScene(new Scene(root));
         stage.show();
     }

@@ -46,8 +46,6 @@ public class StudentInfoMenuController implements Initializable {
 
         //add your data to the table here.
         tvDailyAbsence.setItems(absence);
-
-
     }
 
     // add your data here from any source
