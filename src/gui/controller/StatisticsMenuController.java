@@ -120,6 +120,7 @@ public class StatisticsMenuController implements Initializable {
         Stage switcher = (Stage) btnLogOut.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/LoginMenu.fxml"));
         Scene scene = new Scene(root);
+        switcher.setTitle("Login Menu");
         switcher.setScene(scene);
     }
 

@@ -48,12 +48,14 @@ public class LoginMenuController implements Initializable {
         if (passwordField.getText().equals(passwordFieldStudent) && textField.getText().equals(usernameFieldStudent)) {
             Stage switcher = (Stage) btnSwitch.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
+            switcher.setTitle("Student Info");
             Scene scene = new Scene(root);
             switcher.setScene(scene);
         } else if (passwordField.getText().equals(passwordFieldTeacher) && textField.getText().equals(usernameFieldTeacher)) {
             Stage switcher = (Stage) btnSwitch.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StatisticsMenu.fxml"));
             Scene scene = new Scene(root);
+            switcher.setTitle("Student and Statistics");
             switcher.setScene(scene);
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
