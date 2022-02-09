@@ -20,10 +20,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StatisticsMenuController implements Initializable {
+
+    @FXML
+    private Button btnLogOut;
 
     @FXML
     private Button btnClose;
@@ -103,6 +107,13 @@ public class StatisticsMenuController implements Initializable {
 
     public void handleClose(ActionEvent actionEvent){
         System.exit(0);
+    }
+
+    public void handleLogOut(ActionEvent actionEvent) throws IOException {
+        Stage switcher = (Stage) btnLogOut.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/LoginMenu.fxml"));
+        Scene scene = new Scene(root);
+        switcher.setScene(scene);
     }
 
 
