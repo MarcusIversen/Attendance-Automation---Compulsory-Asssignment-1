@@ -91,13 +91,18 @@ public class StatisticsMenuController implements Initializable {
 
         //provide data
         data.getData().add(new XYChart.Data("Kim Jong Un", 80 ));
-        data.getData().add(new XYChart.Data("The Dictator", 40));
-        data.getData().add(new XYChart.Data("Andy Lam", 30));
-        data.getData().add(new XYChart.Data("Mathias Ferniss", 25));
-        data.getData().add(new XYChart.Data("Mathias F", 25));
-        data.getData().add(new XYChart.Data("Mathias Fernet", 25));
-        data.getData().add(new XYChart.Data("Mathias Far", 25));
-        data.getData().add(new XYChart.Data("Mathias Fyr", 25));
+        data.getData().add(new XYChart.Data("Henrik Henriksen", 60.54));
+        data.getData().add(new XYChart.Data("John Johnson", 45.21));
+        data.getData().add(new XYChart.Data("Andy Lam", 20.42));
+        data.getData().add(new XYChart.Data("Theis Andersen", 24.12));
+        data.getData().add(new XYChart.Data("Anders Andersen", 56.23));
+        data.getData().add(new XYChart.Data("Trine Thomsen", 76.42));
+        data.getData().add(new XYChart.Data("Hans Vestergaard", 1.02));
+        data.getData().add(new XYChart.Data("Kristian Hollænder", 6));
+        data.getData().add(new XYChart.Data("Alexander Christensen", 9));
+        data.getData().add(new XYChart.Data("Peter Petersen", 3.45));
+        data.getData().add(new XYChart.Data("Jens Jensen", 23.65));
+        data.getData().add(new XYChart.Data("Mathias Ferniss", 77.42));
 
         barChart.getData().add(data);
         barChart.setLegendVisible(false);
