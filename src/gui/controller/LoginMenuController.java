@@ -16,9 +16,10 @@ import java.util.ResourceBundle;
 
 public class LoginMenuController implements Initializable {
 
-    private String usernameField1 = "Bo";
 
-    private String passwordField1 = "1";
+    private String usernameFieldStudent = "Bo";
+
+    private String passwordFieldStudent = "1";
 
     private String usernameFieldTeacher = "Ole";
 
@@ -31,10 +32,11 @@ public class LoginMenuController implements Initializable {
     private Button btnHelp;
 
     @FXML
-    private PasswordField passwordField;
+    private TextField textField;
 
     @FXML
-    private TextField textField;
+    private PasswordField passwordField;
+
 
 
     @Override
@@ -43,7 +45,7 @@ public class LoginMenuController implements Initializable {
     }
 
     public void goToStudentInfo() throws Exception {
-        if (passwordField.getText().equals(passwordField1) && textField.getText().equals(usernameField1)) {
+        if (passwordField.getText().equals(passwordFieldStudent) && textField.getText().equals(usernameFieldStudent)) {
             Stage switcher = (Stage) btnSwitch.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
             Scene scene = new Scene(root);
