@@ -26,6 +26,8 @@ import java.util.ResourceBundle;
 public class StatisticsMenuController implements Initializable {
 
     @FXML
+    private Button btnClose;
+    @FXML
     private BorderPane borderPane;
 
     @FXML
@@ -87,6 +89,10 @@ public class StatisticsMenuController implements Initializable {
         barChart.setLegendVisible(false);
 
         return barChart;
+    }
+
+    public void handleClose(ActionEvent actionEvent){
+        System.exit(0);
     }
 
 
