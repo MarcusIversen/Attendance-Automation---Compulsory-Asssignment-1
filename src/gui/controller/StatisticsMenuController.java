@@ -3,6 +3,7 @@ package gui.controller;
 
 import be.Absence;
 import be.Student;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,6 +27,8 @@ import java.util.ResourceBundle;
 
 public class StatisticsMenuController implements Initializable {
 
+    @FXML
+    private JFXComboBox<String> jComboBox;
     @FXML
     private Button btnStudentInfo;
     @FXML
@@ -58,6 +61,8 @@ public class StatisticsMenuController implements Initializable {
 
         //add your data to the table here.
         tvStudent.setItems(students);
+        setUpCombo();
+        test();
     }
 
     // add your data here from any source
@@ -75,7 +80,7 @@ public class StatisticsMenuController implements Initializable {
             new Student("Alexander Christensen", "No", "9 %"),
             new Student("Peter Petersen", "No", "3.45 %"),
             new Student("Jens Jensen", "No", "23.65 %"),
-            new Student("Mathias Ferniss", "No", "77.42 %")
+            new Student("Mathias Fernissss", "No", "77.42 %")
     );
 
 
@@ -132,4 +137,16 @@ public class StatisticsMenuController implements Initializable {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    public void setUpCombo(){
+      jComboBox.getItems().addAll("CSe21A", "CSe21B");
+    }
+
+    @FXML
+    public void test(){
+        String output = (String) jComboBox.getValue();
+        System.out.println(output);
+    }
+
+
 }
