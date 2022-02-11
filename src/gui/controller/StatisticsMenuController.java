@@ -67,7 +67,7 @@ public class StatisticsMenuController implements Initializable {
 
         //add your data to the table here.
         try {
-            tvStudent.setItems((ObservableList<Student>) studentManager.getStudent());
+            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentB());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -86,7 +86,7 @@ public class StatisticsMenuController implements Initializable {
         XYChart.Series data = new XYChart.Series();
         data.setName("Total Absence");
 
-        barChart.getData().add(chartManager.getBarData());
+        barChart.getData().add(chartManager.getBarDataB());
         barChart.setLegendVisible(false);
 
         return barChart;

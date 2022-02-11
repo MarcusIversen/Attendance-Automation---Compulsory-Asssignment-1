@@ -20,8 +20,12 @@ public class ChartManager {
         return allPieData;
     }
 
-    public XYChart.Series getBarData(){
-        XYChart.Series data = chartDAO.getBarData();
+    public XYChart.Series getBarDataA(){
+        XYChart.Series data = chartDAO.getBarDataA();
+        return data;
+    }
+    public XYChart.Series getBarDataB(){
+        XYChart.Series data = chartDAO.getBarDataB();
         return data;
     }
 }

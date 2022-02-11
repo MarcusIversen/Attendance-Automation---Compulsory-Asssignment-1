@@ -13,8 +13,12 @@ public class StudentManager {
     /**
      * Gets the list of students using the getStudents method in StudentDAO.
      */
-    public List<Student> getStudent() throws SQLException {
-        List<Student> allStudents = studentDAO.getStudents();
+    public List<Student> getStudentA() throws SQLException {
+        List<Student> allStudents = studentDAO.getStudentsA();
+        return allStudents;
+    }
+    public List<Student> getStudentB() throws SQLException {
+        List<Student> allStudents = studentDAO.getStudentsB();
         return allStudents;
     }
 }
