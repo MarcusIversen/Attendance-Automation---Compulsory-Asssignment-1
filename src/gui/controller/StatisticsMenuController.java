@@ -3,6 +3,8 @@ package gui.controller;
 
 import be.Absence;
 import be.Student;
+import bll.ChartManager;
+import bll.StudentManager;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +25,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class StatisticsMenuController implements Initializable {
@@ -51,6 +54,9 @@ public class StatisticsMenuController implements Initializable {
     @FXML
     private TableColumn<Student, Double> tcTotal;
 
+    private StudentManager studentManager = new StudentManager();
+    private ChartManager chartManager = new ChartManager();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         borderPane.setCenter(buildBarChart());
@@ -60,29 +66,14 @@ public class StatisticsMenuController implements Initializable {
         tcTotal.setCellValueFactory(new PropertyValueFactory<>("Total"));
 
         //add your data to the table here.
-        tvStudent.setItems(students);
+        try {
+            tvStudent.setItems((ObservableList<Student>) studentManager.getStudent());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         setUpCombo();
         test();
     }
-
-    // add your data here from any source
-    private ObservableList<Student> students = FXCollections.observableArrayList(
-            new Student("Kim Jong Un", "Yes", "80.00 %"),
-            new Student("Henrik Henriksen", "No", "60.54 %"),
-            new Student("John Johnson", "No", "45.21 %"),
-            new Student("Andy Lam", "No", "20.42 %"),
-            new Student("Theis Andersen", "No", "24.12 %"),
-            new Student("Anders Andersen", "No", "56.23 %"),
-            new Student("Trine Thomsen", "No", "76.42 %"),
-            new Student("Lone Hansen", "No", "4.02 %"),
-            new Student("Hans Vestergaard", "No", "1.02 %"),
-            new Student("Kristian Hollænder", "No", "6 %"),
-            new Student("Alexander Christensen", "No", "9 %"),
-            new Student("Peter Petersen", "No", "3.45 %"),
-            new Student("Jens Jensen", "No", "23.65 %"),
-            new Student("Mathias Fernissss", "No", "77.42 %")
-    );
-
 
     private BarChart buildBarChart() {
         CategoryAxis xAxis = new CategoryAxis();
@@ -96,22 +87,7 @@ public class StatisticsMenuController implements Initializable {
         XYChart.Series data = new XYChart.Series();
         data.setName("Total Absence");
 
-        //provide data
-        data.getData().add(new XYChart.Data("Kim Jong Un", 80 ));
-        data.getData().add(new XYChart.Data("Henrik Henriksen", 60.54));
-        data.getData().add(new XYChart.Data("John Johnson", 45.21));
-        data.getData().add(new XYChart.Data("Andy Lam", 20.42));
-        data.getData().add(new XYChart.Data("Theis Andersen", 24.12));
-        data.getData().add(new XYChart.Data("Anders Andersen", 56.23));
-        data.getData().add(new XYChart.Data("Trine Thomsen", 76.42));
-        data.getData().add(new XYChart.Data("Hans Vestergaard", 1.02));
-        data.getData().add(new XYChart.Data("Kristian Hollænder", 6));
-        data.getData().add(new XYChart.Data("Alexander Christensen", 9));
-        data.getData().add(new XYChart.Data("Peter Petersen", 3.45));
-        data.getData().add(new XYChart.Data("Jens Jensen", 23.65));
-        data.getData().add(new XYChart.Data("Mathias Ferniss", 77.42));
-
-        barChart.getData().add(data);
+        barChart.getData().add(chartManager.getBarData());
         barChart.setLegendVisible(false);
 
         return barChart;

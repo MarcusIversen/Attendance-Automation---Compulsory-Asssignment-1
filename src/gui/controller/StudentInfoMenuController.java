@@ -1,6 +1,8 @@
 package gui.controller;
 
 import be.Absence;
+import bll.AbsenceManager;
+import bll.ChartManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class StudentInfoMenuController implements Initializable {
@@ -35,40 +38,32 @@ public class StudentInfoMenuController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
+    private AbsenceManager absenceManager = new AbsenceManager();
+    private ChartManager chartManager = new ChartManager();
     private boolean hasCheckedIn = true;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        borderPane.setCenter(buildPieChart());
+        try {
+            borderPane.setCenter(buildPieChart());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         tcDay.setCellValueFactory(new PropertyValueFactory<>("day"));
         tcAbsence.setCellValueFactory(new PropertyValueFactory<>("absence"));
 
         //add your data to the table here.
-        tvDailyAbsence.setItems(absence);
+        try {
+            tvDailyAbsence.setItems((ObservableList<Absence>) absenceManager.getAbsence());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
-    // add your data here from any source
-    private ObservableList<Absence> absence = FXCollections.observableArrayList(
-            new Absence("Monday", "80 %"),
-            new Absence("Tuesday", "60 %"),
-            new Absence("Wednesday", "40 %"),
-            new Absence("Thursday", "15 %"),
-            new Absence("Friday", "5 %")
-    );
-
-    private PieChart buildPieChart() {
-        //Create Data
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Monday", 80),
-                new PieChart.Data("Tuesday", 60),
-                new PieChart.Data("Wednesday", 40),
-                new PieChart.Data("Thursday", 15),
-                new PieChart.Data("Friday", 5)
-        );
-
+    private PieChart buildPieChart() throws SQLException {
         //Create Piechart Object
-        PieChart pieChart = new PieChart(pieChartData);
+        PieChart pieChart = new PieChart(chartManager.getPieData());
         pieChart.setTitle("Total Absence");
         pieChart.setClockwise(true);
         pieChart.setLabelLineLength(3);
