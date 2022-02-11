@@ -23,6 +23,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -59,7 +60,7 @@ public class StatisticsMenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        borderPane.setCenter(buildBarChart());
+        borderPane.setCenter(buildBarChartA());
 
         tcName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         tcPresent.setCellValueFactory(new PropertyValueFactory<>("Present"));
@@ -67,14 +68,33 @@ public class StatisticsMenuController implements Initializable {
 
         //add your data to the table here.
         try {
-            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentB());
+            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentA());
         } catch (SQLException e) {
             e.printStackTrace();
         }
         setUpCombo();
     }
 
-    private BarChart buildBarChart() {
+    private BarChart buildBarChartA() {
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Student");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Absence in %");
+
+        BarChart barChart = new BarChart(xAxis, yAxis);
+
+        XYChart.Series data = new XYChart.Series();
+        data.setName("Total Absence");
+
+        barChart.getData().add(chartManager.getBarDataA());
+        barChart.setLegendVisible(false);
+
+        return barChart;
+    }
+
+
+    private BarChart buildBarChartB() {
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Student");
 
@@ -92,11 +112,11 @@ public class StatisticsMenuController implements Initializable {
         return barChart;
     }
 
-    public void handleClose(ActionEvent actionEvent){
+    public void handleClose(){
         System.exit(0);
     }
 
-    public void handleLogOut(ActionEvent actionEvent) throws IOException {
+    public void handleLogOut() throws IOException {
         Stage switcher = (Stage) btnLogOut.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/LoginMenu.fxml"));
         Scene scene = new Scene(root);
@@ -105,7 +125,7 @@ public class StatisticsMenuController implements Initializable {
     }
 
 
-    public void handleStudentInfo(ActionEvent actionEvent) throws IOException {
+    public void handleStudentInfo() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Student Info");
@@ -118,8 +138,15 @@ public class StatisticsMenuController implements Initializable {
         comboBox.getValue();
     }
 
-    public void onChangeClass(ActionEvent actionEvent) {
-        String output = (String) comboBox.getValue();
-        System.out.println(output);
+    public void onChangeClass() throws SQLException {
+        if (comboBox.getSelectionModel().isSelected(0))
+        {
+            borderPane.setCenter(buildBarChartA());
+            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentA());
+        } else if (comboBox.getSelectionModel().isSelected(1)) {
+            borderPane.setCenter(buildBarChartB());
+            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentB());
+        } else
+            return;
     }
 }
