@@ -31,7 +31,7 @@ import java.util.ResourceBundle;
 public class StatisticsMenuController implements Initializable {
 
     @FXML
-    private JFXComboBox<String> jComboBox;
+    private ComboBox<String> comboBox;
     @FXML
     private Button btnStudentInfo;
     @FXML
@@ -72,7 +72,6 @@ public class StatisticsMenuController implements Initializable {
             e.printStackTrace();
         }
         setUpCombo();
-        test();
     }
 
     private BarChart buildBarChart() {
@@ -114,15 +113,13 @@ public class StatisticsMenuController implements Initializable {
         stage.show();
     }
 
-    public void setUpCombo(){
-      jComboBox.getItems().addAll("CSe21A", "CSe21B");
+    public void setUpCombo() {
+        comboBox.getItems().addAll("CSe21A", "CSe21B");
+        comboBox.getValue();
     }
 
-    @FXML
-    public void test(){
-        String output = (String) jComboBox.getValue();
+    public void onChangeClass(ActionEvent actionEvent) {
+        String output = (String) comboBox.getValue();
         System.out.println(output);
     }
-
-
 }
