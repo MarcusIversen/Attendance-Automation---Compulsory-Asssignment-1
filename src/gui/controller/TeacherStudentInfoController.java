@@ -5,7 +5,6 @@ import bll.AbsenceManager;
 import bll.ChartManager;
 import gui.model.AbsenceModel;
 import gui.model.ChartModel;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,14 +20,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StudentInfoMenuController implements Initializable {
+public class TeacherStudentInfoController implements Initializable {
     @FXML
-    private Button btnLogOut;
+    private Button btnClose;
     @FXML
     private Button checkInBtn;
     @FXML
@@ -77,19 +75,17 @@ public class StudentInfoMenuController implements Initializable {
 
     public void checkInButton() {
         if (hasCheckedIn == true) {
-           checkInBtn.setText("You are now checked in!");
-           hasCheckedIn = false;
+            checkInBtn.setText("You are now checked in!");
+            hasCheckedIn = false;
         } else {
             checkInBtn.setText("You are now checked out!");
             hasCheckedIn = true;
         }
     }
 
-    public void goLogout(ActionEvent actionEvent) throws IOException {
-        Stage switcher = (Stage) btnLogOut.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/LoginMenu.fxml"));
-        Scene scene = new Scene(root);
-        switcher.setTitle("Login Menu");
-        switcher.setScene(scene);
+    public void handleClose(){
+        Stage stage = (Stage) btnClose.getScene().getWindow();
+        // do what you have to do
+        stage.close();
     }
 }

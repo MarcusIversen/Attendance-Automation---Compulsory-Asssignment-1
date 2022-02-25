@@ -18,5 +18,4 @@ public class AbsenceDAO {
         return absence;
     }
 
-
 }

@@ -6,6 +6,8 @@ import be.Student;
 import bll.ChartManager;
 import bll.StudentManager;
 import com.jfoenix.controls.JFXComboBox;
+import gui.model.ChartModel;
+import gui.model.StudentModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,8 +57,8 @@ public class StatisticsMenuController implements Initializable {
     @FXML
     private TableColumn<Student, Double> tcTotal;
 
-    private StudentManager studentManager = new StudentManager();
-    private ChartManager chartManager = new ChartManager();
+    private StudentModel studentModel = new StudentModel();
+    private ChartModel chartModel = new ChartModel();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,7 +70,7 @@ public class StatisticsMenuController implements Initializable {
 
         //add your data to the table here.
         try {
-            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentA());
+            tvStudent.setItems((ObservableList<Student>) studentModel.getStudentsA());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -87,7 +89,7 @@ public class StatisticsMenuController implements Initializable {
         XYChart.Series data = new XYChart.Series();
         data.setName("Total Absence");
 
-        barChart.getData().add(chartManager.getBarDataA());
+        barChart.getData().add(chartModel.getBarDataA());
         barChart.setLegendVisible(false);
 
         return barChart;
@@ -106,7 +108,7 @@ public class StatisticsMenuController implements Initializable {
         XYChart.Series data = new XYChart.Series();
         data.setName("Total Absence");
 
-        barChart.getData().add(chartManager.getBarDataB());
+        barChart.getData().add(chartModel.getBarDataB());
         barChart.setLegendVisible(false);
 
         return barChart;
@@ -126,7 +128,7 @@ public class StatisticsMenuController implements Initializable {
 
 
     public void handleStudentInfo() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/StudentInfoMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/view/TeacherStudentInfo.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Student Info");
         stage.setScene(new Scene(root));
@@ -142,10 +144,10 @@ public class StatisticsMenuController implements Initializable {
         if (comboBox.getSelectionModel().isSelected(0))
         {
             borderPane.setCenter(buildBarChartA());
-            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentA());
+            tvStudent.setItems((ObservableList<Student>) studentModel.getStudentsA());
         } else if (comboBox.getSelectionModel().isSelected(1)) {
             borderPane.setCenter(buildBarChartB());
-            tvStudent.setItems((ObservableList<Student>) studentManager.getStudentB());
+            tvStudent.setItems((ObservableList<Student>) studentModel.getStudentsB());
         } else
             return;
     }
